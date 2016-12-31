@@ -388,44 +388,38 @@ public class BlackJackMethod {
 				if (userChoice.equalsIgnoreCase("rock") && computerChoiceReal.equalsIgnoreCase("scissors")){
 					System.out.println("You win! The opponent chose " + computerChoiceReal);  
 					tie = false;  
-					win = true; 
-					return win; 
+					win = true;  
 				}
 				else if (userChoice.equalsIgnoreCase("scissors") && computerChoiceReal == "paper"){
 					System.out.println("You win! The opponent chose " + computerChoiceReal);
 					tie = false; 
 					win = true; 
-					return win; 
 				}
 				else if (userChoice.equalsIgnoreCase("paper") && computerChoiceReal == "rock"){
 					System.out.println("You win! The opponent chose " + computerChoiceReal);
 					tie = false;  
-					win = true; 
-					return win; 
+					win = true;  
 				}
 				else if (computerChoiceReal == "rock" && userChoice.equalsIgnoreCase("scissors")) {
 					System.out.println("You lose! The opponent chose " + computerChoiceReal);
 					tie = false;  
 					win = false; 
-					return win; 
 				}
 				else if (computerChoiceReal == "scissors" && userChoice == "paper"){
 					System.out.println("You lose! The opponent chose " + computerChoiceReal);
 					tie = false;
 					win = false; 
-					return win; 
 				}
 				else if (computerChoiceReal == "paper" && userChoice.equalsIgnoreCase("rock")) { 
 					System.out.println("You lose! The opponent chose " + computerChoiceReal);
 					tie = false;  
 					win = false; 
-					return win; 
 				}
 				else {
 					System.out.println("No ties! Try again!"); 
 				}
 			}
 		
-				return win;
+			return win;
 	}
 }
