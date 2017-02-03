@@ -1,9 +1,6 @@
 from bs4 import BeautifulSoup
 import urllib
 
-''' program to scrape first definition off dictionary.com 
-of given words, then write words w/ defs to given file.'''
-
 def get_dirty_def(word):
     # give full url to new soup object, make instance, return div text
     url_concat = "http://www.dictionary.com/browse/" + word
@@ -23,18 +20,20 @@ def format_online_def(bare_extracted_text):
 
 def string_def(the_word):
     # return full str w/ word and def.
-    return str.upper(the_word[0]) + the_word[1:] + '\n' + format_online_def(get_dirty_def(the_word)) + '\n'
+    return str.upper(the_word[0]) + the_word[1:] + '\n' + "Definition: " + format_online_def(get_dirty_def(the_word)) + '\n'
 
 running_input = ""
 end_set = ""
+bulleted_num = 1
 print "Welcome. Enter words to find (lowercase), 'quit' to finish."
 file_to_write = raw_input("File to write to: ")
-file_to_write = open(file_to_write + '.txt','w')
+file_to_write = open(file_to_write+'.txt','w')
 
 while (running_input!='quit'):
     running_input = raw_input("Give word to soup: ")
     if (running_input!='quit'):
-        end_set = end_set + string_def(running_input)
+        end_set = end_set + str(bulleted_num) + ". " + string_def(running_input)
+        bulleted_num += 1
     end_set += '\n'
 
 file_to_write.write(end_set)
